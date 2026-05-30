@@ -15,11 +15,11 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'GlowUp — AI Skin Care Routine',
+  title: 'GlowUp — Your Skin Care Partner',
   description: 'AI skin analysis in 60 seconds. Get a personalized skincare routine built for your skin type. Free. Built for Indian skin.',
   keywords: 'skin care, AI skin analysis, Indian skin, skincare routine, skin score, acne, dark spots',
   openGraph: {
-    title: 'GlowUp — AI Skin Care Routine',
+    title: 'GlowUp — Your Skin Care Partner',
     description: 'AI skin analysis in 60 seconds. Personalized routine built for your skin type.',
     type: 'website',
   },
