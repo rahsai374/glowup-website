@@ -2,8 +2,11 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — GlowUp',
+  title: 'Privacy Policy',
   description: 'GlowUp privacy policy. How we collect, use, and protect your personal data under India\'s DPDPA 2023.',
+  alternates: {
+    canonical: '/privacy',
+  },
 }
 
 export default function Privacy() {

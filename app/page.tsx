@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function PhoneMockup() {
   return (
-    <div className="relative mx-auto w-[260px] h-[520px]">
+    <div aria-hidden="true" className="relative mx-auto w-[260px] h-[520px]">
       {/* Phone frame */}
       <div className="absolute inset-0 bg-brown rounded-[40px] shadow-[0_30px_80px_-10px_rgba(45,24,16,0.35)]" />
       {/* Screen */}
@@ -65,7 +65,7 @@ function PhoneMockup() {
 
 function BlobBackground() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="absolute top-[-80px] right-[-80px] w-96 h-96 rounded-full bg-primary/10 blur-3xl" />
       <div className="absolute top-[40%] left-[-80px] w-80 h-80 rounded-full bg-accent/15 blur-3xl" />
       <div className="absolute bottom-[-60px] right-[20%] w-72 h-72 rounded-full bg-primary/8 blur-3xl" />
@@ -78,6 +78,7 @@ export default function Home() {
     <div className="min-h-screen bg-cream text-brown overflow-x-hidden">
 
       {/* NAV */}
+      <header>
       <nav className="sticky top-0 z-50 bg-cream/80 backdrop-blur-md border-b border-brown/5">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <span className="font-serif font-bold text-2xl text-primary">GlowUp</span>
@@ -94,7 +95,9 @@ export default function Home() {
           </a>
         </div>
       </nav>
+      </header>
 
+      <main>
       {/* HERO */}
       <section className="relative max-w-6xl mx-auto px-6 pt-20 pb-24 flex flex-col-reverse md:flex-row items-center gap-12">
         <BlobBackground />
@@ -113,7 +116,7 @@ export default function Home() {
               href="#"
               className="flex items-center gap-3 border-2 border-brown text-brown font-bold px-6 py-3.5 rounded-2xl hover:bg-brown hover:text-cream transition-all"
             >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <svg aria-hidden="true" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
               Download on App Store
@@ -122,7 +125,7 @@ export default function Home() {
               href="#"
               className="flex items-center gap-3 border-2 border-brown text-brown font-bold px-6 py-3.5 rounded-2xl hover:bg-brown hover:text-cream transition-all"
             >
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <svg aria-hidden="true" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.18 23.76c.3.17.64.25.99.22l.06-.04 11.65-6.73-2.52-2.52-10.18 9.07zm14.55-8.42L14.97 12l2.77-3.34L21 10.9c.93.54.93 1.67 0 2.21l-3.27 2.23zM2.5.88L13.43 11.8l-2.52 2.52L1.26 7.59A1.3 1.3 0 0 1 .5 6.46V1.54C.5 1.1.8.64 1.26.38L2.5.88zm1.35-.65L15.97 6.96 13.43 9.5 3.26.46l.59-.23z"/>
               </svg>
               Get it on Google Play
@@ -137,7 +140,7 @@ export default function Home() {
 
       {/* FEATURES */}
       <section id="features" className="relative bg-[#F0E6DF] py-24">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute top-[-40px] left-[10%] w-72 h-72 rounded-full bg-primary/8 blur-3xl" />
         </div>
         <div className="max-w-6xl mx-auto px-6">
@@ -149,7 +152,7 @@ export default function Home() {
             {[
               {
                 icon: (
-                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <svg aria-hidden="true" className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
                     <circle cx="12" cy="13" r="4"/>
                   </svg>
@@ -159,7 +162,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <svg aria-hidden="true" className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M12 2a10 10 0 1 0 10 10"/>
                     <path d="M12 6v6l4 2"/>
                     <path d="M16 2l4 4-4 4"/>
@@ -170,7 +173,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <svg aria-hidden="true" className="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
                   </svg>
                 ),
@@ -195,7 +198,7 @@ export default function Home() {
 
       {/* HOW IT WORKS */}
       <section id="how-it-works" className="relative py-24 bg-cream">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute top-[20%] right-[-60px] w-80 h-80 rounded-full bg-accent/12 blur-3xl" />
         </div>
         <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -225,7 +228,7 @@ export default function Home() {
 
       {/* BUILT FOR INDIAN SKIN */}
       <section className="bg-brown text-cream py-24 relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
           <div className="absolute top-[-40px] right-[-40px] w-80 h-80 rounded-full bg-primary/20 blur-3xl" />
           <div className="absolute bottom-[-40px] left-[-40px] w-72 h-72 rounded-full bg-accent/15 blur-3xl" />
         </div>
@@ -255,8 +258,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* FAQ */}
+      <section id="faq" className="py-24 bg-cream">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold uppercase tracking-widest text-primary mb-3">Common Questions</p>
+            <h2 className="font-serif font-bold text-4xl text-brown">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: 'Is GlowUp really free?',
+                a: 'Yes, GlowUp is completely free — no subscription, no hidden charges, no in-app purchases. Every feature is available to all users.',
+              },
+              {
+                q: 'Is my selfie photo safe?',
+                a: 'Your photo is never stored on our servers. It is processed for AI analysis and immediately discarded. Only the resulting skin scores are saved to your account so you can track progress.',
+              },
+              {
+                q: 'What skin types does GlowUp support?',
+                a: 'GlowUp is built specifically for Indian skin tones — dusky, wheatish, and fair. Our AI is trained to give accurate analysis across all Indian skin types.',
+              },
+              {
+                q: 'What languages does the app support?',
+                a: 'GlowUp supports both Hindi and English. You can switch between languages anytime in the app settings.',
+              },
+              {
+                q: 'How accurate is the AI skin analysis?',
+                a: 'GlowUp analyzes 10 skin metrics including hydration, radiance, dark spots, oiliness, and more. While it provides detailed insights, it is not a medical tool — always consult a dermatologist for medical skin concerns.',
+              },
+              {
+                q: 'What kind of product recommendations do I get?',
+                a: 'GlowUp recommends a mix of desi remedies (ubtan, multani mitti, kasturi haldi) and affordable products from brands like Himalaya, Biotique, and Dabur — starting from just ₹75.',
+              },
+            ].map((faq) => (
+              <details
+                key={faq.q}
+                className="group bg-white rounded-2xl border border-brown/8 shadow-soft overflow-hidden"
+              >
+                <summary className="flex items-center justify-between px-6 py-5 cursor-pointer list-none font-serif font-bold text-lg text-brown hover:text-primary transition-colors">
+                  {faq.q}
+                  <span className="ml-4 text-primary text-xl group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <p className="px-6 pb-5 text-brown/65 leading-relaxed text-sm">{faq.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* PRIVACY CALLOUT */}
-      <section className="py-20 bg-cream">
+      <section className="py-20 bg-[#F0E6DF]">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
@@ -272,6 +324,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
+
+      </main>
 
       {/* FOOTER */}
       <footer className="bg-[#F0E6DF] border-t border-brown/8 py-12">
