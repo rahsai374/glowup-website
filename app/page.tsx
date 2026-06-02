@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FAQ_DATA } from './config'
 
 function PhoneMockup() {
   return (
@@ -266,32 +267,7 @@ export default function Home() {
             <h2 className="font-serif font-bold text-4xl text-brown">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-4">
-            {[
-              {
-                q: 'Is GlowUp really free?',
-                a: 'Yes, GlowUp is completely free — no subscription, no hidden charges, no in-app purchases. Every feature is available to all users.',
-              },
-              {
-                q: 'Is my selfie photo safe?',
-                a: 'Your photo is never stored on our servers. It is processed for AI analysis and immediately discarded. Only the resulting skin scores are saved to your account so you can track progress.',
-              },
-              {
-                q: 'What skin types does GlowUp support?',
-                a: 'GlowUp is built specifically for Indian skin tones — dusky, wheatish, and fair. Our AI is trained to give accurate analysis across all Indian skin types.',
-              },
-              {
-                q: 'What languages does the app support?',
-                a: 'GlowUp supports both Hindi and English. You can switch between languages anytime in the app settings.',
-              },
-              {
-                q: 'How accurate is the AI skin analysis?',
-                a: 'GlowUp analyzes 10 skin metrics including hydration, radiance, dark spots, oiliness, and more. While it provides detailed insights, it is not a medical tool — always consult a dermatologist for medical skin concerns.',
-              },
-              {
-                q: 'What kind of product recommendations do I get?',
-                a: 'GlowUp recommends a mix of desi remedies (ubtan, multani mitti, kasturi haldi) and affordable products from brands like Himalaya, Biotique, and Dabur — starting from just ₹75.',
-              },
-            ].map((faq) => (
+            {FAQ_DATA.map((faq) => (
               <details
                 key={faq.q}
                 className="group bg-white rounded-2xl border border-brown/8 shadow-soft overflow-hidden"
@@ -311,7 +287,7 @@ export default function Home() {
       <section className="py-20 bg-[#F0E6DF]">
         <div className="max-w-2xl mx-auto px-6 text-center">
           <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+            <svg aria-hidden="true" className="w-7 h-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
           </div>

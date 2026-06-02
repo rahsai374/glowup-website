@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
 import './globals.css'
+import { SITE_URL, FAQ_DATA } from './config'
 
 const fraunces = Fraunces({
   subsets: ['latin'],
@@ -15,7 +16,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://glowup-website.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },
@@ -56,7 +57,7 @@ const jsonLd = {
     {
       '@type': 'WebSite',
       name: 'GlowUp',
-      url: 'https://glowup-website.vercel.app',
+      url: SITE_URL,
       description: 'AI skin analysis in 60 seconds. Personalized skincare routine built for your skin type.',
     },
     {
@@ -81,61 +82,19 @@ const jsonLd = {
     {
       '@type': 'Organization',
       name: 'GlowUp',
-      url: 'https://glowup-website.vercel.app',
+      url: SITE_URL,
       email: 'glowup.skincarepartner@gmail.com',
     },
     {
       '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: 'Is GlowUp really free?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Yes, GlowUp is completely free — no subscription, no hidden charges, no in-app purchases. Every feature is available to all users.',
-          },
+      mainEntity: FAQ_DATA.map((faq) => ({
+        '@type': 'Question',
+        name: faq.q,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.a,
         },
-        {
-          '@type': 'Question',
-          name: 'Is my selfie photo safe?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Your photo is never stored on our servers. It is processed for AI analysis and immediately discarded. Only the resulting skin scores are saved to your account so you can track progress.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What skin types does GlowUp support?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'GlowUp is built specifically for Indian skin tones — dusky, wheatish, and fair. Our AI is trained to give accurate analysis across all Indian skin types.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What languages does the app support?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'GlowUp supports both Hindi and English. You can switch between languages anytime in the app settings.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'How accurate is the AI skin analysis?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'GlowUp analyzes 10 skin metrics including hydration, radiance, dark spots, oiliness, and more. While it provides detailed insights, it is not a medical tool — always consult a dermatologist for medical skin concerns.',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'What kind of product recommendations do I get?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'GlowUp recommends a mix of desi remedies (ubtan, multani mitti, kasturi haldi) and affordable products from brands like Himalaya, Biotique, and Dabur — starting from just ₹75.',
-          },
-        },
-      ],
+      })),
     },
   ],
 }

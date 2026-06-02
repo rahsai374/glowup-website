@@ -62,7 +62,7 @@ export default function OGImage() {
             marginTop: 40,
           }}
         >
-          {['Free Forever', 'Hindi + English', 'Desi Remedies', '₹75 Products'].map((tag) => (
+          {['Free Forever', 'Hindi + English', 'Desi Remedies', 'Rs.75 Products'].map((tag) => (
             <div
               key={tag}
               style={{
