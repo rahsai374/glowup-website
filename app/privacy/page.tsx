@@ -101,7 +101,32 @@ export default function Privacy() {
               </table>
             </div>
 
-            <h3 className="font-serif font-semibold text-lg text-brown mt-6 mb-3">2.3 Photos</h3>
+            <h3 className="font-serif font-semibold text-lg text-brown mt-6 mb-3">2.3 Data collected automatically</h3>
+            <div className="overflow-x-auto rounded-2xl border border-brown/10">
+              <table className="w-full text-sm">
+                <thead className="bg-[#FFEFE3]">
+                  <tr>
+                    <th className="text-left px-4 py-3 font-bold text-brown">Data</th>
+                    <th className="text-left px-4 py-3 font-bold text-brown">Why we collect it</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-brown/8">
+                  {[
+                    ['App usage events', 'Collected via Firebase Analytics to understand which features are used and improve the app'],
+                    ['Crash logs & diagnostics', 'Collected via Firebase Crashlytics to detect and fix app crashes; includes stack traces, device model, OS version, and app state at time of crash'],
+                    ['Device info (model, OS version)', 'To ensure compatibility and diagnose crashes'],
+                    ['Advertising ID (Android Ad ID)', 'Shared with Meta (Facebook) SDK to measure advertising campaign effectiveness; you can reset or delete this ID in your device settings'],
+                  ].map(([d, w]) => (
+                    <tr key={d} className="bg-white even:bg-cream/40">
+                      <td className="px-4 py-3 font-semibold text-brown">{d}</td>
+                      <td className="px-4 py-3 text-brown/65">{w}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <h3 className="font-serif font-semibold text-lg text-brown mt-6 mb-3">2.4 Photos</h3>
             <p className="text-brown/70 leading-relaxed mb-3">When you use the Scan feature, you take or upload a photo of your face. This photo is:</p>
             <ul className="space-y-2">
               {[
@@ -137,7 +162,7 @@ export default function Privacy() {
               ))}
             </ul>
             <p className="mt-4 text-brown/70 leading-relaxed">
-              We do <strong className="text-brown">not</strong> use your data for advertising, sell it to third parties, or use it to train AI models.
+              We do <strong className="text-brown">not</strong> sell your personal data to third parties or use it to train AI models. We share limited, non-personal data (Advertising ID and app install events) with Meta for advertising measurement only — your name, phone number, photos, and skin data are never shared for advertising purposes.
             </p>
           </section>
 
@@ -162,6 +187,31 @@ export default function Privacy() {
                   { label: 'Purpose', val: 'AI-powered skin analysis and scoring' },
                   { label: 'Important', val: 'Google may process this data according to its API terms. As of the date of this policy, Google states that data submitted to the Gemini API is not used to train its models when submitted via API. Please review Google\'s Gemini API terms for the most current information.' },
                   { label: "Google's privacy policy", val: 'https://policies.google.com/privacy', isLink: true },
+                ],
+              },
+              {
+                name: 'Firebase Analytics (Usage Analytics)',
+                items: [
+                  { label: 'What we share', val: 'App usage events (screens viewed, features used, scan completions), device type, OS version, and country. No personally identifiable information is sent.' },
+                  { label: 'Purpose', val: 'To understand how users interact with the app so we can improve it' },
+                  { label: "Google's privacy policy", val: 'https://policies.google.com/privacy', isLink: true },
+                ],
+              },
+              {
+                name: 'Firebase Crashlytics (Crash Reporting)',
+                items: [
+                  { label: 'What we share', val: 'Crash logs (stack traces), device model, OS version, app version, and app state at the time of the crash. A Crashlytics Installation ID is generated to group crashes by device — this is not your Advertising ID and cannot identify you personally.' },
+                  { label: 'Purpose', val: 'To detect, diagnose, and fix app crashes so we can improve stability and your experience' },
+                  { label: "Google's privacy policy", val: 'https://policies.google.com/privacy', isLink: true },
+                ],
+              },
+              {
+                name: 'Meta (Facebook) SDK (Attribution & Analytics)',
+                items: [
+                  { label: 'What we share', val: 'App install events, app open events, and your device\'s Advertising ID (Android Ad ID). No personal data such as your name, phone number, or photos is shared with Meta.' },
+                  { label: 'Purpose', val: 'To measure the effectiveness of advertising campaigns and understand how users discover GlowUp' },
+                  { label: 'Important', val: 'Meta may use this data according to its own data policy. You can opt out of personalised ads in your device\'s advertising settings (Android: Settings → Google → Ads → "Delete advertising ID").' },
+                  { label: "Meta's privacy policy", val: 'https://www.facebook.com/privacy/policy/', isLink: true },
                 ],
               },
               {
@@ -210,7 +260,7 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section>
+          <section id="data-deletion">
             <h2 className="font-serif font-bold text-2xl text-brown mb-4">6. Your Rights Under the DPDPA 2023</h2>
             <p className="text-brown/70 leading-relaxed mb-5">Under India's Digital Personal Data Protection Act 2023, you have the following rights:</p>
             <div className="space-y-4">
@@ -251,6 +301,7 @@ export default function Privacy() {
                     ['Phone number & profile data', 'Until you delete your account'],
                     ['Scan results', 'Until you delete your account, or the 50-scan limit is reached (oldest removed first)'],
                     ['Usage streak', 'Until you delete your account'],
+                    ['Crash logs', 'Retained by Firebase Crashlytics for 90 days'],
                     ['Face photos', 'Never stored on our servers; local device files may be cleared by the OS'],
                   ].map(([d, r]) => (
                     <tr key={d} className="bg-white even:bg-cream/40">

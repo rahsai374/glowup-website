@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://glowup-website.vercel.app'
+export const SITE_URL = 'https://glowup-website-one.vercel.app'
 
 export const FAQ_DATA = [
   {
